@@ -14,7 +14,7 @@ def make_board(w: int, h: int, mark: str, bomb: int, first_open: int):
         8: "eight",
         mark: mark,
     }
-    if bomb > w * h:
+    if 0>w*h-bomb>first_open:
         return -1
     big_board = [[0 for _ in range(w + 2)] for __ in range(h + 2)]
     arrange = []
