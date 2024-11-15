@@ -31,12 +31,12 @@
     <label for="first_open">最初にオープンしておくマスの数:</label>
     <input type="number" id="first_open" name="first_open" required minlength="1" maxlength="4" size="5" value="8" style="border: 2px solid black; padding: 5px; outline: none;" />
     <br>
-    <p><input type="button" value="生成する" id="button1" style="border: 2px solid black; padding: 5px; outline: none;"></p>
-
-    <textarea id="output" type="text" style="white-space: pre-line" ></textarea >
-
-    <br>
+    <p>
+    <input type="button" value="生成する" id="button1" style="border: 2px solid black; padding: 5px; outline: none;">
     <button onclick="copyToClipboard()" style="border: 2px solid black; padding: 5px; outline: none;">問題をコピー</button>
+    </p>
+
+    <textarea id="output" type="text" style="white-space: pre-line;  height: 1200px; ,width: 100%; box-sizing: border-box;" ></textarea >
     <py-script>
         from minesweeper_in_discord import make_board
 
