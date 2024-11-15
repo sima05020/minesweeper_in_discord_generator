@@ -39,11 +39,11 @@
         from minesweeper_in_discord import make_board
 
         def generate(*args):
-            w=Element("width").element.value
-            h=Element("height").element.value
-            bomb=Element("bomb").element.value
-            mark=Element("mark").element.value
-            first_open=Element("first_open").element.value
+            w=int(Element("width").element.value)
+            h=int(Element("height").element.value)
+            bomb=int(Element("bomb").element.value)
+            mark=int(Element("mark").element.value)
+            first_open=int(Element("first_open").element.value)
             Element("output").write(make_board(w,h,mark,bomb,first_open))
 
         Element("button1").element.onclick = generate
