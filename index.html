@@ -33,7 +33,7 @@
     <br>
     <p><input type="button" value="生成する" id="button1" style="border: 2px solid black; padding: 5px; outline: none;"></p>
 
-    <div id="output" style="white-space: pre-line"></div>
+    <input id="output" type="text" style="white-space: pre-line" readonly />
 
     <br>
     <button onclick="copyToClipboard()" style="border: 2px solid black; padding: 5px; outline: none;">問題をコピー</button>
@@ -53,10 +53,10 @@
     <script>
         function copyToClipboard() {
             // コピー対象をJavaScript上で変数として定義する
-            var copyTarget = document.getElementById("output");
+            var output = document.getElementById("output");
 
             // コピー対象のテキストを選択する
-            copyTarget.select();
+            output.select();
 
             // 選択しているテキストをクリップボードにコピーする
             document.execCommand("Copy");
