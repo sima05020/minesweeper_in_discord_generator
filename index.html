@@ -42,7 +42,7 @@
             w = int(Element("width").element.value)
             h = int(Element("height").element.value)
             bomb = int(Element("bomb").element.value)
-            mark = Element("mark").element.value
+            mark = str(Element("mark").element.value)
             first_open = int(Element("first_open").element.value)
             Element("output").write(make_board(w, h, mark, bomb, first_open))
 
