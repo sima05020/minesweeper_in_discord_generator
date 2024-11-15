@@ -17,21 +17,21 @@
 
 <body>
     <label for="width">横幅:</label>
-    <input type="number" id="width" name="width" required minlength="1" maxlength="2" size="3" value="6" style="border: 2px solid black; padding: 5px;" />
+    <input type="number" id="width" name="width" required minlength="1" maxlength="2" size="3" value="6" style="border: 2px solid black; padding: 5px; outline: none;" />
     <br>
     <label for="height">縦幅:</label>
-    <input type="number" id="height" name="height" required minlength="1" maxlength="2" size="3" value="8" style="border: 2px solid black; padding: 5px;" />
+    <input type="number" id="height" name="height" required minlength="1" maxlength="2" size="3" value="8" style="border: 2px solid black; padding: 5px; outline: none;" />
     <br>
     <label for="bomb">爆弾の数:</label>
-    <input type="number" id="bomb" name="bomb" required minlength="1" maxlength="4" size="5" value="10" style="border: 2px solid black; padding: 5px;" />
+    <input type="number" id="bomb" name="bomb" required minlength="1" maxlength="4" size="5" value="10" style="border: 2px solid black; padding: 5px; outline: none;" />
     <br>
     <label for="mark">爆弾にする記号(絵文字タグの中身を入力):</label>
-    <input type="text" id="mark" name="mark" required minlength="1" maxlength="20" size="20" value="bomb" style="border: 2px solid black; padding: 5px;" />
+    <input type="text" id="mark" name="mark" required minlength="1" maxlength="20" size="20" value="bomb" style="border: 2px solid black; padding: 5px; outline: none;" />
     <br>
     <label for="first_open">最初にオープンしておくマスの数:</label>
-    <input type="number" id="first_open" name="first_open" required minlength="1" maxlength="4" size="5" value="8" style="border: 2px solid black; padding: 5px;" />
+    <input type="number" id="first_open" name="first_open" required minlength="1" maxlength="4" size="5" value="8" style="border: 2px solid black; padding: 5px; outline: none;" />
     <br>
-    <p><input type="button" value="生成する" id="button1" style="border: 2px solid black; padding: 5px;"></p>
+    <p><input type="button" value="生成する" id="button1" style="border: 2px solid black; padding: 5px; outline: none;"></p>
 
     <div id="output"></div>
 
@@ -41,7 +41,7 @@
         def generate(*args):
             w = int(Element("width").element.value)
             h = int(Element("height").element.value)
-            bomb = (Element("bomb").element.value)
+            bomb = int(Element("bomb").element.value)
             mark = Element("mark").element.value
             first_open = int(Element("first_open").element.value)
             Element("output").write(make_board(w, h, mark, bomb, first_open))
