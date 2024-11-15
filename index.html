@@ -35,6 +35,8 @@
 
     <div id="output" style="white-space: pre-line"></div>
 
+    <br>
+    <button onclick="copyToClipboard()" style="border: 2px solid black; padding: 5px; outline: none;">問題をコピー</button>
     <py-script>
         from minesweeper_in_discord import make_board
 
@@ -48,6 +50,21 @@
 
         Element("button1").element.onclick = generate
     </py-script>
+    <script>
+        function copyToClipboard() {
+            // コピー対象をJavaScript上で変数として定義する
+            var copyTarget = document.getElementById("output");
+
+            // コピー対象のテキストを選択する
+            copyTarget.select();
+
+            // 選択しているテキストをクリップボードにコピーする
+            document.execCommand("Copy");
+
+            // コピーをお知らせする
+            alert("問題コピー完了");
+        }
+    </script>
 </body>
 
 </html>
