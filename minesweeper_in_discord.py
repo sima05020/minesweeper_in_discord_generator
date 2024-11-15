@@ -14,7 +14,7 @@ def make_board(w: int, h: int, mark: str, bomb: int, first_open: int):
         8: "eight",
         mark: mark,
     }
-    if 0>w*h-bomb>first_open:
+    if 0 > w * h - bomb > first_open:
         return -1
     big_board = [[0 for _ in range(w + 2)] for __ in range(h + 2)]
     arrange = []
@@ -35,7 +35,7 @@ def make_board(w: int, h: int, mark: str, bomb: int, first_open: int):
                 big_board[i][j] = (
                     "||:" + num_dict[cal_number(j, i, mark, big_board)] + ":||"
                 )
-    result = f"w*h : {w}*{h} , Bombs : {bomb} , first open : {first_open}\n"
+    result = f"w×h : {w}×{h} , Bombs : {bomb} , first open : {first_open}\n"
 
     count = 0
     while count < first_open:
