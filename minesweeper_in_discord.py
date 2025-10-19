@@ -14,7 +14,11 @@ def make_board(w: int, h: int, mark: str, bomb: int, first_open: int):
         8: "eight",
         mark: mark,
     }
-    if 0 > w * h - bomb > first_open:
+    if w <= 0 or h <= 0:
+        return -1
+    if bomb < 0 or bomb >= w * h:
+        return -1
+    if w * h - bomb < first_open:
         return -1
     big_board = [[0 for _ in range(w + 2)] for __ in range(h + 2)]
     arrange = []
@@ -71,4 +75,5 @@ def cal_number(w: int, h: int, mark: str, board: list[list]):
     return num
 
 
-make_board(8, 6, "death_pic", 8, 6)
+if __name__ == "__main__":
+    print(make_board(8, 6, "death_pic", 8, 6))
